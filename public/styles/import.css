@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+@import 'room.css';
+@import 'banner.css';
+@import 'icons.css';
+@import 'question-card.css';
+@import 'questions.css';
+@import 'replies.css';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+}
+
+button, i {
+    cursor: pointer;
+}
+
+:root {
+    --custom-purple: #6154A0;
+    --custom-teal: #40F2CE;
+    --custom-grey: #9A9A9A;
+    --custom-highlight: #FFE600;
+    --custom-card-shadow: 0px 0px 6px 4px #00000045;
+    --custom-white: #FFFFFF;
+    --custom-icon-shadow: 0px 0px 8px 0px var(--custom-grey);
+    --custom-banner-shadow: 0px 4px 8px 2px var(--custom-grey);
+    --custom-button-padding: 5px 15px;
+}

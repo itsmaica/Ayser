@@ -1,0 +1,7 @@
+#banner-container {
+    position: relative;
+    background-color: var(--custom-teal);
+    box-shadow: var(--custom-banner-shadow);
+    height: 75px;
+    top: 0;
+}
