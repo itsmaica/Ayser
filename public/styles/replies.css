@@ -1,0 +1,69 @@
+#reply-container {
+    position: absolute;
+    top: 0;
+    right: 10rem;
+
+    max-height: 100%;
+    padding: 20px 40px;
+
+    overflow-y: scroll;
+
+    display: flex;
+    flex-direction: column;
+
+    box-shadow: var(--custom-card-shadow);
+    border-radius: 5px;
+
+}
+
+#reply-container-heading {
+    color: var(--custom-teal);
+    cursor: default;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--custom-grey);
+}
+
+#reply-container.hidden {
+    display: none;
+}
+
+#reply-container::-webkit-scrollbar {
+    display: none;
+}
+
+#reply-input-container {
+    display: flex;
+    gap: 10px;
+}
+
+#reply-label {
+    color: var(--custom-grey);
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+#reply-input {
+    border: 2px solid var(--custom-grey);
+    border-radius: 3px;
+}
+
+#reply-submit {
+    padding: 5px 15px;
+    background-color: var(--custom-teal);
+    border: none;
+    border-radius: 5px;
+    color:var(--custom-white);
+    font-weight: bolder;
+    box-shadow: var(--custom-icon-shadow);
+}
+
+#reply-card {
+    margin-top: 50px;
+    padding: 30px 10px;
+    box-shadow: var(--custom-card-shadow);
+    border-radius: 5px;
+}
+
+#reply-content {
+    color: var(--custom-purple);
+}

@@ -1,0 +1,7 @@
+#room-container {
+    position: relative;
+}
+
+#room-container > .room-question-containers {
+    margin-right: 45%
+}
