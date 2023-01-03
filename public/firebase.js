@@ -17,17 +17,17 @@ export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 
 
-const questions = collection(db, 'questions');
+// const questions = collection(db, 'questions');
 
-await setDoc(doc(questions, "question"), {
-  name: "First question", post: 'new post'
-})
+// await setDoc(doc(questions, "question"), {
+//   name: "First question", post: 'new post'
+// })
 
-await setDoc(doc(questions, "question2"), {
-  name: "Second question", post: '2nd new post'
-})
+// await setDoc(doc(questions, "question2"), {
+//   name: "Second question", post: '2nd new post'
+// })
 
-const questionRef = doc(db, 'questions', 'question');
-const questionSnap = await getDoc(questionRef);
+// const questionRef = doc(db, 'questions', 'question');
+// const questionSnap = await getDoc(questionRef);
 
-console.log(questionSnap.data());
+// console.log(questionSnap.data());
