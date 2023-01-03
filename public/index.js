@@ -1,7 +1,9 @@
-import { postQuestion } from "./components/question-card/index.js";
 import { createQuestion } from "./components/questions/index.js";
 import { createReply } from "./components/replies/reply.js";
 import { loadComponents } from "./views/room-page.js";
+import { postQuestion } from "./components/question-card/index.js";
+import { app, db } from './firebase.js'
+
 
 window.addEventListener("DOMContentLoaded", () => {
   loadComponents();
