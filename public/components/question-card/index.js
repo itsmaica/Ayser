@@ -1,3 +1,7 @@
+import { db } from "../../firebase.js"
+import { getFirestore, collection } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js"
+
+
 export const questionContainer = () => {
   const roomContainer = document.getElementById("room-container");
   const container = document.createElement("div");
@@ -50,16 +54,10 @@ const questionInputs = () => {
 
 // requests
 export const postQuestion = async ({ name, question }) => {
-  const response = await fetch("/questions", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ name, question }),
-  });
+  const res = await db.collection('posts')
+  .doc('post')
+  .set({name: name, question: question})
 
-  if (response.ok) {
-    const data = await response.json();
-    return data;
-  }
+  console.log("POSTED", res.id);
+  console.log(res);
 };

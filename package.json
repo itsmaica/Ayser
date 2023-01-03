@@ -3,6 +3,7 @@
     "firebase": "^9.15.0"
   },
   "scripts": {
+    "start": "firebase emulators:start",
     "build": "firebase deploy"
   }
 }
