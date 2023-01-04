@@ -4,4 +4,12 @@
     box-shadow: var(--custom-banner-shadow);
     height: 75px;
     top: 0;
+    width: 100%;
+}
+
+#banner-heading {
+    color: var(--custom-purple);
+    left: 50%;
+    top: 25%;
+    position: absolute;
 }

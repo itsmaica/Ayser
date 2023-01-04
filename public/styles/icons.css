@@ -1,7 +1,8 @@
 #menu-container {
     position: absolute;
     right: 3rem;
-    height: 100%;
+    top: 25%;
+    height: fit-content;
 }
 
 #menu-icon {
