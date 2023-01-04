@@ -5,6 +5,13 @@
 @import 'question-card.css';
 @import 'questions.css';
 @import 'replies.css';
+@import 'menu-navbar.css';
+/* @import 'menu-navbar.css';
+@import 'pitch-section.css';
+@import 'use-our-product.css';
+@import 'footer.css'; */
+
+
 
 * {
     box-sizing: border-box;
