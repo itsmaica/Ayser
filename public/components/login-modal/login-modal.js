@@ -1,27 +1,41 @@
+export const modal = () => {
+    const container = document.querySelector(".modal-container");
+
+    const modal = document.createElement("div")
+
+    modal.id = "modal";
+
+    // , modalTitle, modalForm)
+
+    container.appendChild(modal)
+}
+
 export const modalUser = () => {
-    const mainContainer = document.querySelector(".modal-container");
+    const mainContainer = document.querySelector("#modal");
 
     const loginPicContainer = document.createElement("div");
     const loginPic = document.createElement("img");
-    loginPic.src = "https://remotebnb.s3.us-west-1.amazonaws.com/brain.png";
+    loginPic.src = "https://remotebnb.s3.us-west-1.amazonaws.com/user.svg";
 
     loginPicContainer.setAttribute("id","login-pic-container");
     loginPic.setAttribute("id","login-pic");
 
     loginPicContainer.appendChild(loginPic);
     mainContainer.appendChild(loginPicContainer);
+
+    return mainContainer;
 }
 
 
 export const modalTitle = () => {
-    const mainContainer = document.querySelector(".modal-container");
+    const mainContainer = document.querySelector("#modal");
 
     const titleContainer = document.createElement("div");
     const titleText = document.createElement("p");
 
     titleContainer.setAttribute("id", "title-container");
 
-    titleText.innerText = "Ask and you shall receive";
+    titleText.innerText = "Ask and You Shall Receive";
 
     titleContainer.appendChild(titleText);
     mainContainer.appendChild(titleContainer);
@@ -29,7 +43,7 @@ export const modalTitle = () => {
 
 // Submit button is created in this function
 export const modalForm = () => {
-    const mainContainer = document.querySelector(".modal-container");
+    const mainContainer = document.querySelector("#modal");
 
     const formContainer = document.createElement("div");
     const form = document.createElement("form");
@@ -44,6 +58,8 @@ export const modalForm = () => {
 
     form.appendChild(submitButt)
 }
+
+
 
 export const modalFormStudentInputs = () => {
     const form = document.querySelector("#login-form");
