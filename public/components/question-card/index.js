@@ -1,11 +1,6 @@
 import { db } from "../../firebase.js";
 import {
   collection,
-  doc,
-  getDoc,
-  setDoc,
-  getDocs,
-  query,
   addDoc,
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 
@@ -61,8 +56,10 @@ const questionInputs = () => {
 
 // requests
 export const postQuestion = async ({ name, question }) => {
+  console.log(name, question);
   const questions = await addDoc(collection(db, "questions"), {
     name: name,
     question: question,
+    highlighted: false
   });
 };
