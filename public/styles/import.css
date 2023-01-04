@@ -2,8 +2,8 @@
 /* Aysr font - open to changing it, just testing this look out :) */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&display=swap');
 @import 'banner.css';
-@import 'room.css';
 @import 'icons.css';
+@import 'room.css';
 @import 'question-card.css';
 @import 'questions.css';
 @import 'replies.css';
