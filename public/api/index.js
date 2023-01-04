@@ -18,7 +18,6 @@ export const postQuestion = async ({ name, question }) => {
   });
   const _question = doc(db, "questions", questions.id);
   const questionDoc = await getDoc(_question);
-  console.log(questionDoc)
   return questionDoc
 };
 
@@ -30,7 +29,6 @@ export const highLightQuestion = async (questionId, highlighted) => {
   }
   const question = doc(db, "questions", questionId);
   updateDoc(question, data)
-
 };
 
 export const upvoteQuestion = async (questionId, voteCount) => {
@@ -46,6 +44,7 @@ export const upvoteQuestion = async (questionId, voteCount) => {
 // post reply to db
 export const addReply = async (questionId, reply) => {
   // TODO: create reply associated to question by questionId
-  const replyCollection = collection(db, `questions/${questionId}/replies`);
-
+  const reply = addDoc(collection(db, `questions/${questionId}/replies`), {
+    reply: reply
+  })
 };
