@@ -2,8 +2,7 @@ import { createQuestion } from "./components/questions/index.js";
 import { createReply } from "./components/replies/reply.js";
 import { loadComponents } from "./views/room-page.js";
 import { postQuestion } from "./components/question-card/index.js";
-import { app, db } from './firebase.js'
-
+import { app, db } from "./firebase.js";
 
 window.addEventListener("DOMContentLoaded", () => {
   loadComponents();
@@ -15,7 +14,6 @@ window.addEventListener("DOMContentLoaded", () => {
     const askersName = document.getElementById("name-input").value;
     const question = document.getElementById("question-input").value;
 
-    console.log("askers name ", askersName, "question ", question);
     const newQuestion = await postQuestion({ askersName, question });
 
     // create a question card with newQuestion

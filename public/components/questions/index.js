@@ -13,24 +13,26 @@ export const questionListContainer = () => {
     "Does flex go on the container?",
   ];
 
-  // TODO: Fetch questions to render if any
+  // make a request to get all questions that belong to a particular room here
+
+  // map the question list and call create question with question properties 
+
   for (let i = 0; i < questionContent.length; i++) {
     const content = questionContent[i];
 
+    const highlighted = false;
+    const upvote = 0;
     // replace i with question id
-    const question = createQuestion(content, i);
+    const question = createQuestion(content, i, highlighted, upvote);
     container.appendChild(question);
   }
 
   roomContainer.appendChild(container);
 };
 
-export const createQuestion = (content, id) => {
+export const createQuestion = (content, id, highlighted, upvote) => {
   const container = document.createElement("section");
   container.setAttribute("class", "questions");
-
-  const actionContainer = document.createElement("div");
-  actionContainer.setAttribute("id", "reply-actions-container");
 
   const question = document.createElement("h2");
   question.setAttribute("class", "question-content");
@@ -38,17 +40,31 @@ export const createQuestion = (content, id) => {
 
   question.innerText = content;
 
+  const questionActions = createQuestionActions(id, highlighted, upvote);
+
+  container.append(question, questionActions);
+
+  return container;
+};
+
+export const createQuestionActions = (questionId, highlighted, upvote) => {
+  const actionContainer = document.createElement("div");
+  actionContainer.setAttribute("id", "reply-actions-container");
+
   const replyButton = document.createElement("button");
   replyButton.setAttribute("id", "reply-button");
   replyButton.setAttribute("class", "submit-buttons");
-  replyButton.dataset.questionId = id;
+  replyButton.dataset.questionId = questionId;
 
   replyButton.innerText = "Reply";
 
-  actionContainer.append(replyButton, highlightIcon(id), upvoteIcon(id));
-  container.append(question, actionContainer);
+  actionContainer.append(
+    highlightIcon(questionId, highlighted),
+    upvoteIcon(questionId, upvote),
+    replyButton
+  );
 
-  return container;
+  return actionContainer;
 };
 
 // TODO: fetch questions in question list container
