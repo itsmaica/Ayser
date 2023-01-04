@@ -1,31 +1,23 @@
 import { highlightIcon, upvoteIcon } from "../icons/reply-icons.js";
+import { db } from "../../firebase.js";
+import { collection, getDocs } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js"
 
-export const questionListContainer = () => {
+export const questionListContainer = async () => {
   const roomContainer = document.getElementById("room-container");
   const container = document.createElement("div");
 
   container.setAttribute("id", "question-list-container");
 
-  const questionContent = [
-    "Does flex go on the container? Does flex go on the container?Does flex go on the container?Does flex go on the container?Does flex go on the container?",
-    "Does flex go on the container?",
-    "Does flex go on the container?",
-    "Does flex go on the container?",
-  ];
-
-  // make a request to get all questions that belong to a particular room here
-
-  // map the question list and call create question with question properties 
-
-  for (let i = 0; i < questionContent.length; i++) {
-    const content = questionContent[i];
-
-    const highlighted = false;
-    const upvote = 0;
-    // replace i with question id
-    const question = createQuestion(content, i, highlighted, upvote);
-    container.appendChild(question);
-  }
+  let currId = 0;
+  const questions = collection(db, 'questions');
+  const allQuestions = await getDocs(questions);
+  allQuestions.forEach((doc) => {
+    const document = doc.data();
+    const content = createQuestion(document.question, currId);
+    currId++;
+    console.log(content.question);
+    container.append(content);
+  })
 
   roomContainer.appendChild(container);
 };
@@ -69,10 +61,16 @@ export const createQuestionActions = (questionId, highlighted, upvote) => {
 
 // TODO: fetch questions in question list container
 export const getAllQuestions = async () => {
-  const response = await fetch("/questions");
+  // const response = await fetch("/questions");
 
-  if (response.ok) {
-    const data = await response.json();
-    return data;
-  }
+  // if (response.ok) {
+  //   const data = await response.json();
+  //   return data;
+  // }
+  const questions = collection(db, 'questions');
+
+  const allQuestions = await getDocs(questions)
+  allQuestions.forEach((doc) => {
+    console.log(doc.data());
+  })
 };
