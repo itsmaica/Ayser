@@ -1,4 +1,6 @@
 import { highlightIcon, upvoteIcon } from "../icons/reply-icons.js";
+import { db } from "../../firebase.js";
+import { collection, getDocs } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js"
 
 export const questionListContainer = () => {
   const roomContainer = document.getElementById("room-container");
@@ -53,10 +55,16 @@ export const createQuestion = (content, id) => {
 
 // TODO: fetch questions in question list container
 export const getAllQuestions = async () => {
-  const response = await fetch("/questions");
+  // const response = await fetch("/questions");
 
-  if (response.ok) {
-    const data = await response.json();
-    return data;
-  }
+  // if (response.ok) {
+  //   const data = await response.json();
+  //   return data;
+  // }
+  const questions = collection(db, 'questions');
+
+  const allQuestions = await getDocs(questions)
+  allQuestions.forEach((doc) => {
+    console.log(doc.data());
+  })
 };
