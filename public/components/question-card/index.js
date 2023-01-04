@@ -54,10 +54,7 @@ const questionInputs = () => {
 
 // requests
 export const postQuestion = async ({ name, question }) => {
-  // const questions = collection(db, 'questions');
-  // const newQuestion = { name , question }
-  // console.log(newQuestion.name)
-  // console.log(name, question)
+  
   const questions = await addDoc(collection(db, 'questions'), {
     name: name,
     question: question
