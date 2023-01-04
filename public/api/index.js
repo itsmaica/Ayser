@@ -18,6 +18,12 @@ export const postQuestion = async ({ name, question }) => {
 // mark question as highlighted
 export const highLightQuestion = async (questionId, highlighted) => {
   // TODO: query question db and mark as highlighted
+  const data = {
+    highlighted: highlighted
+  }
+  const question = doc(db, "questions", questionId);
+  updateDoc(question, data)
+
 };
 
 export const upvoteQuestion = async (questionId, voteCount) => {
