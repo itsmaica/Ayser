@@ -1,7 +1,6 @@
 import { createQuestion } from "./components/questions/index.js";
 import { createReply } from "./components/replies/reply.js";
 import { loadComponents } from "./views/room-page.js";
-// import { postQuestion } from "./components/question-card/index.js";
 import { app, db } from "./firebase.js";
 import { postQuestion } from "./api/index.js";
 
@@ -25,6 +24,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const highlightIcons = document.querySelectorAll("#highlight-icon");
 
   highlightIcons.forEach((highlightIcon) => {
+    // console.log(highlightIcon)
     highlightIcon.addEventListener("click", () => {
       if (highlightIcon.className.includes("off")) {
         highlightIcon.classList.remove("off");
