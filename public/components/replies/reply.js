@@ -68,5 +68,5 @@ export const createReply = (content, questionId) => {
 export const getQuestionReplies = async (questionId) => {
   const replyCollection = collection(db, `questions/${questionId}/replies`);
   const allReplies = await getDocs(replyCollection);
-  
+  return allReplies;
 };

@@ -2,27 +2,22 @@ import { highlightIcon, upvoteIcon } from "../icons/reply-icons.js";
 import { db } from "../../firebase.js";
 import { collection, getDocs } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js"
 
-export const questionListContainer = () => {
+export const questionListContainer = async () => {
   const roomContainer = document.getElementById("room-container");
   const container = document.createElement("div");
 
   container.setAttribute("id", "question-list-container");
 
-  const questionContent = [
-    "Does flex go on the container? Does flex go on the container?Does flex go on the container?Does flex go on the container?Does flex go on the container?",
-    "Does flex go on the container?",
-    "Does flex go on the container?",
-    "Does flex go on the container?",
-  ];
-
-  // TODO: Fetch questions to render if any
-  for (let i = 0; i < questionContent.length; i++) {
-    const content = questionContent[i];
-
-    // replace i with question id
-    const question = createQuestion(content, i);
-    container.appendChild(question);
-  }
+  let currId = 0;
+  const questions = collection(db, 'questions');
+  const allQuestions = await getDocs(questions);
+  allQuestions.forEach((doc) => {
+    const document = doc.data();
+    const content = createQuestion(document.question, currId);
+    currId++;
+    console.log(content.question);
+    container.append(content);
+  })
 
   roomContainer.appendChild(container);
 };
