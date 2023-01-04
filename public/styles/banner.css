@@ -7,7 +7,7 @@
     width: 100%;
 }
 
-#banner-heading {
+#banner-container-heading {
     color: var(--custom-purple);
     left: 50%;
     top: 25%;
