@@ -1,5 +1,7 @@
-// import { loadLandingPgComponents } from "./views/landing-page";
+import { loadLandingPageComponents } from "./views/landing-page.js"
 
-// window.addEventListener("DOMContentLoaded", () => {
-//     loadLandingPgComponents();
-// })
+window.addEventListener("DOMContentLoaded", () => {
+    loadLandingPageComponents();
+
+
+})

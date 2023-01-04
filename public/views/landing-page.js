@@ -1,12 +1,26 @@
-// import { landingPage } from "../components/landing-page/landing-pg";
+// had issues with multiple import. Worked after switching to individual imports - ms
+// import {
+//     menuBar,
+//     pitchSection,
+//     whyUseOurProduct,
+//     footer }
+// from "../components/landing-page.js";
+
+import { menuBar } from "../components/landing-page/landing-pg.js";
+import { pitchSection } from "../components/landing-page/landing-pg.js";
+import { whyUseOurProduct } from "../components/landing-page/landing-pg.js";
+import { footer } from "../components/landing-page/landing-pg.js";
 
 // const landingContainer = () => {
-//     const lContainer = document.createElement("div")
-//     lContainer.innerText="WHAT IS GOING ON MAICA"
-//     document.body.appendChild(lContainer);
+//     const container = document.createElement("div")
+//     container.innerText="WHAT IS GOING ON MAICA"
+//     container.setAttribute("id", "landingPageContainer");
+//     document.body.appendChild(container);
 // }
 
-// export const loadLandingPgComponents = () => {
-//     landingPage();
-//     landingContainer();
-// }
+export const loadLandingPageComponents = () => {
+    menuBar();
+    pitchSection();
+    whyUseOurProduct();
+    footer();
+};

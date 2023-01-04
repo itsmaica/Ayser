@@ -3,8 +3,8 @@
 export const menuBar = () => {
     const menuBar = document.createElement("div");
     const aysrH1 = document.createElement("h1");
-    const about = document.createElement("p")
-    const logIn = document.createElement("p")
+    const about = document.createElement("p");
+    const logIn = document.createElement("p");
 
     menuBar.setAttribute("id", "menuBar");
 
@@ -160,10 +160,6 @@ export const footer = () => {
     tannerLink.href = "https://github.com/JTannerShaw";
     tannerLink.target = "_blank";
 
-
-
-
-
     container.append(aysrDiv, ariDiv, geoDiv, maicaDiv, tannerDiv);
     aysrDiv.appendChild(aysrFooterText);
     ariDiv.appendChild(ariLink);
@@ -171,14 +167,13 @@ export const footer = () => {
     maicaDiv.appendChild(maicaLink);
     tannerDiv.appendChild(tannerLink);
 
-
     document.body.appendChild(container)
 }
 
 
-window.addEventListener("DOMContentLoaded", () => {
-    menuBar();
-    pitchSection();
-    whyUseOurProduct();
-    footer();
-})
+// window.addEventListener("DOMContentLoaded", () => {
+//     menuBar();
+//     pitchSection();
+//     whyUseOurProduct();
+//     footer();
+// })
