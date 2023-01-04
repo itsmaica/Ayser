@@ -6,12 +6,11 @@
     gap: 20px;
 
     padding: 40px 20px;
-    margin-left: auto;
-    margin-right: auto;
     width: 800px;
 
     box-shadow: var(--custom-card-shadow);
     border-radius: 5px;
+
 }
 
 .input-container {

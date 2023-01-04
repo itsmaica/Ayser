@@ -10,6 +10,7 @@ export const questionListContainer = async () => {
   const container = document.createElement("div");
 
   container.setAttribute("id", "question-list-container");
+  container.setAttribute("class", "question-containers");
 
   let currId = 0;
   const questions = collection(db, "questions");
@@ -26,7 +27,12 @@ export const questionListContainer = async () => {
   roomContainer.appendChild(container);
 };
 
-export const createQuestion = (content, id, highlighted = false, upvote = 0) => {
+export const createQuestion = (
+  content,
+  id,
+  highlighted = false,
+  upvote = 0
+) => {
   const container = document.createElement("section");
   container.setAttribute("class", "questions");
 

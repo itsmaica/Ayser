@@ -1,7 +1,6 @@
 #room-container {
     position: relative;
-}
-
-#room-container > .room-question-containers {
-    margin-right: 45%
+    display: flex;
+    flex-direction: column;
+    align-items: center
 }

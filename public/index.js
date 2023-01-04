@@ -44,16 +44,20 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const questionContainer = document.getElementById("question-container");
 
+    const roomContainer = document.getElementById("room-container");
+
     if (e.target.id === "reply-button" || e.target.id === "reply-container") {
       replyContainer.classList.remove("hidden");
 
-      questionListContainer.classList.add("room-question-containers");
-      questionContainer.classList.add("room-question-containers");
+      questionListContainer.classList.add("translate");
+      questionContainer.classList.add("translate");
+      roomContainer.classList.add("translate");
     } else {
       replyContainer.classList.add("hidden");
 
-      questionListContainer.classList.remove("room-question-containers");
-      questionContainer.classList.remove("room-question-containers");
+      questionListContainer.classList.remove("translate");
+      questionContainer.classList.remove("translate");
+      roomContainer.classList.add("translate");
     }
   });
   // reply events
