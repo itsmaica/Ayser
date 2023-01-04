@@ -1,13 +1,20 @@
 import { db } from "../../firebase.js";
-import { collection, doc, getDoc, setDoc, getDocs, query, addDoc } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js"
-
+import {
+  collection,
+  doc,
+  getDoc,
+  setDoc,
+  getDocs,
+  query,
+  addDoc,
+} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 
 export const questionContainer = () => {
   const roomContainer = document.getElementById("room-container");
   const container = document.createElement("div");
 
   container.setAttribute("id", "question-container");
-  // container.setAttribute("class", "room-question-containers");
+  container.setAttribute("class", "question-containers");
 
   const { nameField, questionField, questionButton } = questionInputs();
 
@@ -54,8 +61,8 @@ const questionInputs = () => {
 
 // requests
 export const postQuestion = async ({ name, question }) => {
-  const questions = await addDoc(collection(db, 'questions'), {
+  const questions = await addDoc(collection(db, "questions"), {
     name: name,
-    question: question
-  })
+    question: question,
+  });
 };
