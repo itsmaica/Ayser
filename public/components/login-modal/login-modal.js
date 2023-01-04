@@ -5,8 +5,6 @@ export const modal = () => {
 
     modal.id = "modal";
 
-    // , modalTitle, modalForm)
-
     container.appendChild(modal)
 }
 
@@ -41,72 +39,112 @@ export const modalTitle = () => {
     mainContainer.appendChild(titleContainer);
 }
 
-// Submit button is created in this function
+
 export const modalForm = () => {
     const mainContainer = document.querySelector("#modal");
 
     const formContainer = document.createElement("div");
-    const form = document.createElement("form");
+    const form = document.createElement("div");
 
-    const submitButt = document.createElement("button");
 
     formContainer.id = "form-container";
     form.id = "login-form";
 
+    const student = modalFormStudentInputs();
+    const admin = modalFormAdminInputs();
+
+    form.append(student, admin)
+
     formContainer.appendChild(form);
     mainContainer.append(formContainer);
 
-    form.appendChild(submitButt)
+    // form.appendChild(submitButt)
 }
 
-
-
-export const modalFormStudentInputs = () => {
-    const form = document.querySelector("#login-form");
+const modalFormStudentInputs = () => {
 
     const studentContainer = document.createElement("div");
-    studentContainer.id = "student-container"
-
+    const textContainer = document.createElement("div");
+    const studentText = document.createElement("p");
+    const form = document.createElement("form");
     const label = document.createElement("label");
+    const submitButt = document.createElement("button");
+
+
+    studentContainer.id = "student-container";
+
+    textContainer.id="student-text-container";
+    studentText.id="student-text";
+    studentText.innerText = "Student"
+
+    form.id = "student-form";
+
+
+    submitButt.id = "student-login-button";
+    submitButt.innerText = "Student Login";
+
     label.for = "student-login";
-    label.innerText = "Student Login";
+    label.innerText = "Student";
 
     const studentInput = document.createElement("input");
     studentInput.id = "student-login";
     studentInput.name = "student-login";
-    studentInput.placeholder = "unique student id"
+    studentInput.placeholder = "Unique Id Number"
 
-    studentContainer.appendChild(label);
-    studentContainer.appendChild(studentInput);
+    form.append(label,studentInput,submitButt);
+    textContainer.appendChild(studentText)
+    studentContainer.append(textContainer,form);
+    // studentContainer.appendChild(label);
+    // studentContainer.appendChild(studentInput);
 
-    form.appendChild(studentContainer)
+    return studentContainer;
+
+    // form.appendChild(studentContainer)
 }
 
-export const modalFormAdminInputs = () => {
-    const form = document.querySelector("#login-form");
+const modalFormAdminInputs = () => {
+    // const form = document.querySelector("#login-form");
 
     const adminContainer = document.createElement("div");
-    adminContainer.id = "admin-container"
+    const textContainer = document.createElement("div");
+    const adminText = document.createElement("p");
 
+    const form = document.createElement("form");
     const emailLabel = document.createElement("label");
-    emailLabel.for = "admin-email-login";
-    emailLabel.innerText = "Admin email";
-
     const passwordLabel = document.createElement("label");
-    passwordLabel.for = "admin-password-login";
-    passwordLabel.innerText = "Admin password";
-
     const adminEmailInput = document.createElement("input");
+    const adminPasswordInput = document.createElement("input");
+    const submitButt = document.createElement("button");
+
+    adminContainer.id = "admin-container";
+    form.id = "admin-login-form";
+
+    textContainer.id = "admin-text-container";
+    adminText.id = "admin-text";
+    adminText.innerText = "Admin";
+
+    submitButt.id = "admin-submit"
+    submitButt.innerText = "Admin Login"
+
+    emailLabel.for = "admin-email-login";
+    emailLabel.innerText = "email";
+
+    passwordLabel.for = "admin-password-login";
+    passwordLabel.innerText = "password";
+
     adminEmailInput.id = "admin-email-login";
     adminEmailInput.name = "admin-email-login";
     adminEmailInput.placeholder = "e-mail address"
 
-    const adminPasswordInput = document.createElement("input");
     adminPasswordInput.id = "admin-password-login";
     adminPasswordInput.name = "admin-password-login";
     adminPasswordInput.placeholder = "password"
 
-    adminContainer.append(emailLabel, adminEmailInput, passwordLabel, adminPasswordInput)
+    form.append(emailLabel, adminEmailInput,passwordLabel,adminPasswordInput,submitButt);
 
-    form.appendChild(adminContainer);
+    textContainer.appendChild(adminText);
+    adminContainer.append(textContainer,form);
+
+    return adminContainer;
+
 }
