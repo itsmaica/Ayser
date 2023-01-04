@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+/* Aysr font - open to changing it, just testing this look out :) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&display=swap');
 @import 'room.css';
 @import 'banner.css';
 @import 'icons.css';
@@ -6,10 +8,9 @@
 @import 'questions.css';
 @import 'replies.css';
 @import 'menu-navbar.css';
-/* @import 'menu-navbar.css';
 @import 'pitch-section.css';
 @import 'use-our-product.css';
-@import 'footer.css'; */
+@import 'footer.css';
 
 
 
@@ -28,6 +29,7 @@ button, i {
     --custom-purple: #6154A0;
     --custom-teal: #40F2CE;
     --custom-grey: #9A9A9A;
+    --custom-dark-brown: #1A0F16;
     --custom-highlight: #FFE600;
     --custom-card-shadow: 0px 0px 6px 4px #00000045;
     --custom-white: #FFFFFF;
