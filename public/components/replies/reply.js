@@ -18,6 +18,8 @@ export const replyContainer = () => {
 
   const replies = ["Yes you can use flex", "Yup parent container not children"];
 
+  // make request to get all replies by question Id here
+
   for (const reply of replies) {
     container.append(createReply(reply, 1));
   }
@@ -51,6 +53,9 @@ const replyInputs = () => {
 export const createReply = (content, questionId) => {
   const container = document.createElement("div");
   const reply = document.createElement("h3");
+
+  // create a reply by making a post to specific question reply route
+  // if true create reply below
 
   container.setAttribute("id", "reply-card");
   container.setAttribute("type", "submit");
