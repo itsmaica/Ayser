@@ -12,7 +12,8 @@
 @import 'use-our-product.css';
 @import 'footer.css';
 @import 'modal-container.css';
-
+@import 'modal-user-picture.css';
+@import 'modal-title.css';
 
 * {
     box-sizing: border-box;
