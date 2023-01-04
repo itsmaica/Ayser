@@ -44,7 +44,8 @@ export const upvoteQuestion = async (questionId, voteCount) => {
 // post reply to db
 export const addReply = async (questionId, reply) => {
   // TODO: create reply associated to question by questionId
-  const reply = addDoc(collection(db, `questions/${questionId}/replies`), {
+  const _reply = addDoc(collection(db, `questions/${questionId}/replies`), {
     reply: reply
   })
+  return _reply;
 };
