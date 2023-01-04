@@ -1,0 +1,32 @@
+#footerContainer {
+    margin-top: 6rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 10vh;
+    width: 100vw;
+    background-color: yellow;
+    color: var(--custom-dark-brown);
+}
+
+#aysrDiv {
+    font-family: 'Playfair Display', serif;
+}
+
+#repo-link {
+    text-decoration: none;
+    color: var(--custom-dark-brown);
+}
+
+#repo-link:hover {
+    font-weight: bold;
+}
+
+.squad {
+    text-decoration: none;
+    color: var(--custom-dark-brown);
+}
+
+.squad:hover{
+    font-weight: bolder;
+}

@@ -1,53 +1,66 @@
 #menu-bar {
-    width: 100vw;
-    height: 15vh;
-    /* border: 3px solid red; */
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 100vw;
+  height: 15vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000001;
 }
 
 #nav-aysr-container {
-    width: 50vw;
-    height: 15vh;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-    /* background-color: pink; */
+  width: 50vw;
+  height: 15vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
 }
 
 #nav-text-container {
-    width: 50vw;
-    height: 15vh;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    /* background-color: green; */
+  width: 50vw;
+  height: 15vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 /* Aysr Text in nav bar */
 #aysrHeading {
-    padding-left: 3rem;
-    padding-top: 2rem;
-    font-family: 'Playfair Display', serif;
-    font-size: 8em;
-    color: #1A0F16;
+  padding-left: 3rem;
+  padding-bottom: 0.5rem;
+  font-family: "Playfair Display", serif;
+  font-size: 8em;
+  color: #ffffff;
 }
 
-#nav-text-container p {
-    color: var(--custom-dark-brown);
-    font-size: 3em;
-    padding-top: 1em;
-    padding-right: 3rem;
-    /* font-family: 'Playfair Display', serif; */
+/* About & Log in */
+#nav-text-container a + button {
+  color: #ffffff;
+  margin-right: 10rem;
+  /* font-family: 'Playfair Display', serif; */
 }
 
-#aysrHeading {
-    padding-right: 3rem;
+#about-link {
+  font-size: 2em;
+  padding-right: 8rem;
+  text-decoration: none;
+  color: #ffffff;
 }
+
+/* #about-link:hover {
+  font-weight: bold;
+} */
 
 #logIn-link {
-    font-weight: bold;
-    /* padding-right: 3rem; */
+  background-color: var(--custom-teal);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+  width: 10rem;
+  font-size: 2em;
+  font-weight: bold;
+  /* text-align: center; */
 }

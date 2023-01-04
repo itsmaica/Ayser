@@ -8,8 +8,8 @@ export const menuBar = () => {
 
     const textContainer = document.createElement("div");
 
-    const about = document.createElement("p");
-    const logIn = document.createElement("p");
+    const about = document.createElement("a");
+    const logIn = document.createElement("button");
 
     menuBar.setAttribute("id", "menu-bar");
 
@@ -22,6 +22,8 @@ export const menuBar = () => {
 
     about.setAttribute("id", "about-link")
     about.innerText = "About";
+    about.href = "https://github.com/itsmaica/Holiday-Hackathon";
+    about.target = "_blank"
 
     logIn.setAttribute("id","logIn-link")
     logIn.innerText = "Log In";
@@ -55,7 +57,8 @@ export const pitchSection = () => {
 
     pitchImageContainer.setAttribute("id","pitch-image-container");
     pitchImg.setAttribute("id","pitch-image");
-    pitchImg.src = "https://remotebnb.s3.us-west-1.amazonaws.com/students.jpeg"
+    // pitchImg.src = "https://remotebnb.s3.us-west-1.amazonaws.com/students.jpeg"
+    pitchImg.src = "https://remotebnb.s3.us-west-1.amazonaws.com/studentqs.jpeg";
 
     askYourQ.appendChild(qText);
     getYourA.appendChild(aText);
@@ -154,8 +157,9 @@ export const footer = () => {
     const maicaDiv = document.createElement("div");
     const tannerDiv = document.createElement("div");
 
-    const aysrFooterText = document.createElement("p");
+    // const aysrFooterText = document.createElement("p");
 
+    const aysrLink = document.createElement("a");
     const ariLink = document.createElement("a");
     const geoLink = document.createElement("a");
     const maicaLink = document.createElement("a");
@@ -169,7 +173,19 @@ export const footer = () => {
     maicaDiv.setAttribute("id","maicaDiv");
     tannerDiv.setAttribute("id","tannerDiv");
 
-    aysrFooterText.innerText = "©Ayser"
+    // aysrFooterText.innerText = "© 2023 Ayser"
+
+    ariLink.setAttribute("class","squad");
+    geoLink.setAttribute("class","squad");
+    maicaLink.setAttribute("class","squad");
+    tannerLink.setAttribute("class","squad");
+
+    aysrLink.setAttribute("id", "repo-link")
+
+    aysrLink.innerText = "© 2023 Ayser";
+    aysrLink.href = "https://github.com/itsmaica/Holiday-Hackathon";
+    aysrLink.target = "_blank";
+
 
     ariLink.innerText = "Ari Robinson";
     ariLink.href = "https://github.com/AriannaNRobinson";
@@ -188,7 +204,7 @@ export const footer = () => {
     tannerLink.target = "_blank";
 
     container.append(aysrDiv, ariDiv, geoDiv, maicaDiv, tannerDiv);
-    aysrDiv.appendChild(aysrFooterText);
+    aysrDiv.appendChild(aysrLink);
     ariDiv.appendChild(ariLink);
     geoDiv.appendChild(geoLink);
     maicaDiv.appendChild(maicaLink);
