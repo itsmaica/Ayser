@@ -6,7 +6,7 @@ export const menuBar = () => {
     const about = document.createElement("p");
     const logIn = document.createElement("p");
 
-    menuBar.setAttribute("id", "menuBar");
+    menuBar.setAttribute("id", "menu-bar");
 
     aysrH1.setAttribute("id", "aysrHeading")
     aysrH1.innerText = "AYSR";
