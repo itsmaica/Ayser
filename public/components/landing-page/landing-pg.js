@@ -42,7 +42,6 @@ export const pitchSection = () => {
     getYourA.setAttribute("id","get-your-answer");
     aText.innerText = "Get answers from a trusted Admin"
 
-
     pitchImageContainer.setAttribute("id","pitch-image-container");
     pitchImg.setAttribute("id","pitch-image");
     pitchImg.src = "https://remotebnb.s3.us-west-1.amazonaws.com/students.jpeg"
@@ -143,7 +142,6 @@ export const footer = () => {
     maicaDiv.setAttribute("id","maicaDiv");
     tannerDiv.setAttribute("id","tannerDiv");
 
-
     aysrFooterText.innerText = "©Ayser"
 
     ariLink.innerText = "Ari Robinson";
@@ -154,7 +152,15 @@ export const footer = () => {
     geoLink.href = "https://github.com/gootieno";
     geoLink.target = "_blank";
 
-    
+    maicaLink.innerText = "Maica Santos";
+    maicaLink.href = "https://github.com/itsmaica";
+    maicaLink.target = "_blank";
+
+    tannerLink.innerText = "Tanner Shaw";
+    tannerLink.href = "https://github.com/JTannerShaw";
+    tannerLink.target = "_blank";
+
+
 
 
 
