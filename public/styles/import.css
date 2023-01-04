@@ -14,6 +14,7 @@
 @import 'modal-container.css';
 @import 'modal-user-picture.css';
 @import 'modal-title.css';
+@import 'modal-form-container.css';
 
 * {
     box-sizing: border-box;

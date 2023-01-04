@@ -2,8 +2,8 @@
 import { modalTitle } from "../components/login-modal/login-modal.js";
 import { modalUser } from "../components/login-modal/login-modal.js";
 import { modalForm } from "../components/login-modal/login-modal.js";
-import { modalFormStudentInputs } from "../components/login-modal/login-modal.js";
-import { modalFormAdminInputs } from "../components/login-modal/login-modal.js";
+// import { modalFormStudentInputs } from "../components/login-modal/login-modal.js";
+// import { modalFormAdminInputs } from "../components/login-modal/login-modal.js";
 import { modal } from "../components/login-modal/login-modal.js";
 
 
@@ -19,6 +19,6 @@ export const loadLoginModalComponents = () => {
     modalUser();
     modalTitle();
     modalForm();
-    modalFormStudentInputs();
-    modalFormAdminInputs();
+    // modalFormStudentInputs();
+    // modalFormAdminInputs();
 }
