@@ -1,5 +1,5 @@
 import { db } from "../../firebase.js";
-import { collection, doc, getDoc, setDoc, getDocs, query } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js"
+import { collection, doc, getDoc, setDoc, getDocs, query, addDoc } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js"
 
 
 export const questionContainer = () => {
@@ -54,10 +54,12 @@ const questionInputs = () => {
 
 // requests
 export const postQuestion = async ({ name, question }) => {
-  const questions = collection(db, 'questions');
-
-  const allQuestions = await getDocs(questions)
-  allQuestions.forEach((doc) => {
-    console.log(doc.data());
+  // const questions = collection(db, 'questions');
+  // const newQuestion = { name , question }
+  // console.log(newQuestion.name)
+  // console.log(name, question)
+  const questions = await addDoc(collection(db, 'questions'), {
+    name: name,
+    question: question
   })
 };

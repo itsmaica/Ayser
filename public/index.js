@@ -12,11 +12,11 @@ window.addEventListener("DOMContentLoaded", () => {
   const questionButton = document.getElementById("question-button");
 
   questionButton.addEventListener("click", async () => {
-    const askersName = document.getElementById("name-input").value;
+    const name = document.getElementById("name-input").value;
     const question = document.getElementById("question-input").value;
 
-    console.log("askers name ", askersName, "question ", question);
-    const newQuestion = await postQuestion({ askersName, question });
+    console.log("askers name ", name, "question ", question);
+    const newQuestion = await postQuestion({ name, question });
 
     // create a question card with newQuestion
     createQuestion(newQuestion);
