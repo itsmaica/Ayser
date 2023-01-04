@@ -2,22 +2,33 @@
 // menu bar -> [Ayser - about - login ]
 export const menuBar = () => {
     const menuBar = document.createElement("div");
+
+    const aysrContainer = document.createElement("div");
     const aysrH1 = document.createElement("h1");
+
+    const textContainer = document.createElement("div");
+
     const about = document.createElement("p");
     const logIn = document.createElement("p");
 
     menuBar.setAttribute("id", "menu-bar");
 
+    aysrContainer.setAttribute("id", "nav-aysr-container");
+
     aysrH1.setAttribute("id", "aysrHeading")
-    aysrH1.innerText = "AYSR";
+    aysrH1.innerText = "Aysr";
+
+    textContainer.setAttribute("id", "nav-text-container")
 
     about.setAttribute("id", "about-link")
-    about.innerText = "ABOUT";
+    about.innerText = "About";
 
     logIn.setAttribute("id","logIn-link")
     logIn.innerText = "Log In";
 
-    menuBar.append(aysrH1, about, logIn)
+    aysrContainer.appendChild(aysrH1);
+    textContainer.append(about, logIn);
+    menuBar.append(aysrContainer, textContainer)
     document.body.appendChild(menuBar);
 };
 
@@ -38,9 +49,9 @@ export const pitchSection = () => {
 
     pitchTextContainer.setAttribute("id","pitch-text-container");
     askYourQ.setAttribute("id","ask-your-question");
-    qText.innerText = "Ask your questions in real-time"
+    qText.innerText = "Ask your questions in real-time."
     getYourA.setAttribute("id","get-your-answer");
-    aText.innerText = "Get answers from a trusted Admin"
+    aText.innerText = "Get answers from a trusted Admin."
 
     pitchImageContainer.setAttribute("id","pitch-image-container");
     pitchImg.setAttribute("id","pitch-image");
@@ -64,6 +75,11 @@ export const whyUseOurProduct = () => {
     const useOurProductHeading = document.createElement("p"); // "Why use our platform"
 
     const prosGrid = document.createElement("div");
+    const pro1TextContainer = document.createElement("div");
+    const pro2TextContainer = document.createElement("div");
+    const pro1ImgContainer = document.createElement("div");
+    const pro2ImgContainer = document.createElement("div");
+
     const pro1Text = document.createElement("p");
     const pro2Text = document.createElement("p");
     const pro1Img = document.createElement("img");
@@ -83,19 +99,24 @@ export const whyUseOurProduct = () => {
     section2.setAttribute("id", "section2");
     section3.setAttribute("id", "section3");
 
-    useOurProductHeading.innerText = "Why Use Our Platform"
+    useOurProductHeading.innerText = "Why Use Our Platform";
 
-    prosGrid.setAttribute("id", "prosGrid");
+    pro1TextContainer.setAttribute("id", "pro1-text-container");
+    pro2TextContainer.setAttribute("id", "pro2-text-container");
+    pro1ImgContainer.setAttribute("id", "pro1-img-container");
+    pro2ImgContainer.setAttribute("id","pro2-img-container");
+
+    prosGrid.setAttribute("id", "pros-grid");
     pro1Text.setAttribute("id", "pro1Text");
     pro2Text.setAttribute("id", "pro2Text");
     pro1Img.setAttribute("id", "pro1Img");
     pro2Img.setAttribute("id", "pro2Img");
-    pro1Text.setAttribute("className", "proText");
-    pro2Text.setAttribute("className", "proText");
-    pro1Img.setAttribute("className", "proImg");
-    pro2Img.setAttribute("className", "proImg");
+    pro1Text.setAttribute("class", "proText");
+    pro2Text.setAttribute("class", "proText");
+    pro1Img.setAttribute("class", "proImg");
+    pro2Img.setAttribute("class", "proImg");
 
-    pro1Text.innerText = "Your privacy is protected. Sharing your name is optional."
+    pro1Text.innerText = "Your privacy is protected. When using Aysr to interact, sharing your name is optional."
     pro2Text.innerText = "Know the answer? Collaborate with your fellow students and deepen your own understanding."
 
     pro1Img.src = "https://remotebnb.s3.us-west-1.amazonaws.com/moon.png"
@@ -111,10 +132,16 @@ export const whyUseOurProduct = () => {
     section1.appendChild(useOurProductHeading);
     section2.appendChild(prosGrid);
     section3.append(readyToStart, logInContainer);
-    prosGrid.append(pro1Text, pro2Text, pro1Img, pro2Img);
+    prosGrid.append(pro1TextContainer, pro2TextContainer, pro1ImgContainer, pro2ImgContainer);
+    pro1TextContainer.appendChild(pro1Text);
+    pro2TextContainer.appendChild(pro2Text);
+    pro1ImgContainer.appendChild(pro1Img);
+    pro2ImgContainer.appendChild(pro2Img)
+
 
     readyToStart.appendChild(startText);
     logInContainer.appendChild(logInButton);
+
     sectionContainer.append(section1, section2, section3);
     document.body.appendChild(sectionContainer);
 }

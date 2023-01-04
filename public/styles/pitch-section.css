@@ -1,0 +1,69 @@
+#pitch-container {
+    width: 100vw;
+    height: 80vh;
+    background-color: var(--custom-purple);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#pitch-text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+}
+
+#ask-your-question {
+    height: 50%;
+    width: 100%;
+    /* background-color: wheat; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-bottom: 5rem;
+}
+
+#get-your-answer {
+    height: 50%;
+    width: 100%;
+    /* background-color: green; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-top: 5rem;
+}
+
+#ask-your-question p {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    padding-left: 3rem;
+    color: white;
+}
+
+#get-your-answer p {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    text-align: end;
+    color: var(--custom-highlight);
+}
+
+
+/* student img container */
+#pitch-image-container {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: aliceblue; */
+}
+
+#pitch-image {
+    height: 80%;
+    width: 90%;
+    object-fit: scale-down;
+    opacity: 90%;
+}

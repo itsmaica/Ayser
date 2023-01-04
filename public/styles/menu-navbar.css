@@ -1,5 +1,53 @@
 #menu-bar {
     width: 100vw;
-    height: 25vh;
-    border: 3px solid red;
+    height: 15vh;
+    /* border: 3px solid red; */
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#nav-aysr-container {
+    width: 50vw;
+    height: 15vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    /* background-color: pink; */
+}
+
+#nav-text-container {
+    width: 50vw;
+    height: 15vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* background-color: green; */
+}
+
+/* Aysr Text in nav bar */
+#aysrHeading {
+    padding-left: 3rem;
+    padding-top: 2rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 8em;
+    color: #1A0F16;
+}
+
+#nav-text-container p {
+    color: var(--custom-dark-brown);
+    font-size: 3em;
+    padding-top: 1em;
+    padding-right: 3rem;
+    /* font-family: 'Playfair Display', serif; */
+}
+
+#aysrHeading {
+    padding-right: 3rem;
+}
+
+#logIn-link {
+    font-weight: bold;
+    /* padding-right: 3rem; */
 }
