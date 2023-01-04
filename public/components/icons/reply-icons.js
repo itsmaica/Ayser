@@ -1,4 +1,4 @@
-export const highlightIcon = (questionId, highlighted = false) => {
+export const highlightIcon = (questionId, highlighted) => {
   const highlight = document.createElement("i");
 
   highlight.setAttribute("id", "highlight-icon");
@@ -11,7 +11,7 @@ export const highlightIcon = (questionId, highlighted = false) => {
   return highlight;
 };
 
-export const upvoteIcon = (questionId, upvote = 0) => {
+export const upvoteIcon = (questionId, upvote) => {
   const upvoteContainer = document.createElement("div");
   const upvoteIcon = document.createElement("i");
 
