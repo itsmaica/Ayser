@@ -1,3 +1,4 @@
+import { collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js"
 // requests
 // get all replies by question
 export const getQuestionReplies = async (questionId) => {
@@ -26,4 +27,6 @@ export const upvoteQuestion = async (questionId, voteCount) => {
 // post reply to db
 export const addReply = async (questionId, reply) => {
   // TODO: create reply associated to question by questionId
+  const replyCollection = collection(db, `questions/${questionId}/replies`);
+
 };

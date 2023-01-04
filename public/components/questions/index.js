@@ -12,15 +12,11 @@ export const questionListContainer = async () => {
   container.setAttribute("id", "question-list-container");
   container.setAttribute("class", "question-containers");
 
-  let currId = 0;
+
   const questions = collection(db, "questions");
   const allQuestions = await getDocs(questions);
   allQuestions.forEach((doc) => {
-    const document = doc.data();
-    console.log(document);
-    const content = createQuestion(document.question, currId);
-    currId++;
-    console.log(content.question);
+    const content = createQuestion(doc);
     container.append(content);
   });
 
@@ -28,8 +24,7 @@ export const questionListContainer = async () => {
 };
 
 export const createQuestion = (
-  content,
-  id,
+  doc,
   highlighted = false,
   upvote = 0
 ) => {
@@ -38,11 +33,11 @@ export const createQuestion = (
 
   const question = document.createElement("h2");
   question.setAttribute("class", "question-content");
-  question.dataset.questionId = id;
+  question.dataset.questionId = doc.id;
 
-  question.innerText = content;
+  question.innerText = doc.data().question;
 
-  const questionActions = createQuestionActions(id, highlighted, upvote);
+  const questionActions = createQuestionActions(doc.id, highlighted, upvote);
 
   container.append(question, questionActions);
 
