@@ -35,6 +35,12 @@ export const highLightQuestion = async (questionId, highlighted) => {
 
 export const upvoteQuestion = async (questionId, voteCount) => {
   //TODO: increase upvote count
+  const data = {
+    upvote: voteCount
+  }
+  const question = doc(db, "questions", questionId);
+  updateDoc(question, data)
+
 };
 
 // post reply to db
