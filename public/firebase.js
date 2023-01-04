@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-import { getFirestore, collection, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js"
+import { getFirestore } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js"
 
 
 const firebaseConfig = {
@@ -17,17 +17,3 @@ export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 
 
-// const questions = collection(db, 'questions');
-
-// await setDoc(doc(questions, "question"), {
-//   name: "First question", post: 'new post'
-// })
-
-// await setDoc(doc(questions, "question2"), {
-//   name: "Second question", post: '2nd new post'
-// })
-
-// const questionRef = doc(db, 'questions', 'question');
-// const questionSnap = await getDoc(questionRef);
-
-// console.log(questionSnap.data());

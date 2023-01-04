@@ -1,3 +1,7 @@
+import { collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js"
+import { db } from "../../firebase.js";
+
+
 export const replyContainer = () => {
   const roomContainer = document.getElementById("room-container");
 
@@ -62,10 +66,7 @@ export const createReply = (content, questionId) => {
 
 // get all replies by question
 export const getQuestionReplies = async (questionId) => {
-  const response = await fetch(`/questions/${questionId}/replies`);
-
-  if (response.ok) {
-    const data = await response.json();
-    return data;
-  }
+  const replyCollection = collection(db, `questions/${questionId}/replies`);
+  const allReplies = await getDocs(replyCollection);
+  
 };
