@@ -1,4 +1,5 @@
-import { collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js"
+import { db } from "../firebase.js";
+import { collection, addDoc, getDocs, doc, updateDoc, getDoc } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js"
 // requests
 // get all replies by question
 export const getQuestionReplies = async (questionId) => {
@@ -12,8 +13,13 @@ export const postQuestion = async ({ name, question }) => {
   const questions = await addDoc(collection(db, "questions"), {
     name: name,
     question: question,
-    highlighted: false
+    highlighted: false,
+    upvote: 0
   });
+  const _question = doc(db, "questions", questions.id);
+  const questionDoc = await getDoc(_question);
+  console.log(questionDoc)
+  return questionDoc
 };
 
 // mark question as highlighted

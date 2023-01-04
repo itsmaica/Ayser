@@ -1,8 +1,9 @@
 import { createQuestion } from "./components/questions/index.js";
 import { createReply } from "./components/replies/reply.js";
 import { loadComponents } from "./views/room-page.js";
-import { postQuestion } from "./components/question-card/index.js";
+// import { postQuestion } from "./components/question-card/index.js";
 import { app, db } from "./firebase.js";
+import { postQuestion } from "./api/index.js";
 
 window.addEventListener("DOMContentLoaded", () => {
   loadComponents();
@@ -11,11 +12,11 @@ window.addEventListener("DOMContentLoaded", () => {
   const questionButton = document.getElementById("question-button");
 
   questionButton.addEventListener("click", async () => {
-    const askersName = document.getElementById("name-input").value;
+    const name = document.getElementById("name-input").value;
     const question = document.getElementById("question-input").value;
-
-    const newQuestion = await postQuestion({ askersName, question });
-
+    console.log(name, question)
+    const newQuestion = await postQuestion({ name, question });
+    console.log(newQuestion);
     // create a question card with newQuestion
     createQuestion(newQuestion);
   });
