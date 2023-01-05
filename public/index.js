@@ -17,6 +17,9 @@ window.addEventListener("DOMContentLoaded", () => {
     const name = document.getElementById("name-input").value;
     const question = document.getElementById("question-input").value;
 
+    const questionInputs = document.querySelectorAll(".question-inputs");
+    for (const input of questionInputs) input.value = "";
+
     const newQuestion = await postQuestion({ name, question });
     // create a question card with newQuestion
 
@@ -28,22 +31,6 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   // icon events
-  const highlightIcons = document.querySelectorAll("#highlight-icon");
-
-  highlightIcons.forEach((highlightIcon) => {
-    // console.log(highlightIcon)
-    highlightIcon.addEventListener("click", () => {
-      if (highlightIcon.className.includes("off")) {
-        highlightIcon.classList.remove("off");
-        highlightIcon.classList.add("on");
-        highlightIcon.dataset.highlighted = "true";
-      } else {
-        highlightIcon.classList.remove("on");
-        highlightIcon.classList.add("off");
-        highlightIcon.dataset.highlighted = "false";
-      }
-    });
-  });
 
   document.body.addEventListener("click", (e) => {
     const questionListContainer = document.getElementById(
@@ -61,10 +48,35 @@ window.addEventListener("DOMContentLoaded", () => {
       questionContainer.classList.add("translate");
       roomContainer.classList.add("translate");
 
-      console.log("question id ", e.target.dataset.questionId);
-
       localStorage.setItem("currentQuestionId", e.target.dataset.questionId);
       repliesContainer();
+    } else if (e.target.id === "highlight-icon") {
+      if (e.target.className.includes("off")) {
+        e.target.classList.remove("off");
+        e.target.classList.add("on");
+        e.target.dataset.highlighted = "true";
+      } else {
+        e.target.classList.remove("on");
+        e.target.classList.add("off");
+        e.target.dataset.highlighted = "false";
+      }
+    } else if (e.target.id === "upvote-icon" && !e.target.dataset.disabled) {
+      e.target.dataset.disabled = "true";
+
+      const upvoteSpans = document.querySelectorAll("span[data-question-id]");
+
+      let spanToUpdate;
+
+      for (const span of upvoteSpans) {
+        if (span.dataset.questionId === e.target.dataset.questionId) {
+          spanToUpdate = span;
+        }
+        if (spanToUpdate) {
+          spanToUpdate.dataset.questionId = "1";
+          spanToUpdate.innerText = "1";
+          break;
+        }
+      }
     } else {
       replyContainer.classList.add("hidden");
 
@@ -93,28 +105,5 @@ window.addEventListener("DOMContentLoaded", () => {
 
       replyInput.value = "";
     }
-  });
-
-  const upvoteIcons = document.querySelectorAll("#upvote-icon");
-  const upvoteSpans = document.querySelectorAll(`span[data-question-id]`);
-  upvoteIcons.forEach((upvoteIcon) => {
-    upvoteIcon.addEventListener("click", (e) => {
-      e.stopPropagation();
-      if (!e.target.dataset.disabled) {
-        const upvoteId = e.target.dataset.questionId;
-
-        let spanToUpdate;
-
-        for (const span of upvoteSpans) {
-          if (span.dataset.questionId === upvoteId) spanToUpdate = span;
-        }
-
-        if (spanToUpdate) {
-          spanToUpdate.dataset.questionId = "1";
-          spanToUpdate.innerText = "1";
-          e.target.dataset.disabled = "true";
-        }
-      }
-    });
   });
 });
