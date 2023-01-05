@@ -77,10 +77,3 @@ export const createReply = (content, questionId) => {
   container.appendChild(reply);
   return container;
 };
-
-// get all replies by question
-export const getQuestionReplies = async (questionId) => {
-  const replyCollection = collection(db, `questions/${questionId}/replies`);
-  const allReplies = await getDocs(replyCollection);
-  return allReplies;
-};
