@@ -84,16 +84,13 @@ export const handleUpvoteCount = (currentElement) => {
 
   const isDisabled = currentElement.dataset.disabled;
 
-  console.log("span ", span, currentElement);
   switch (isDisabled) {
     case true:
       span.innerText = "1";
       span.dataset.count = Number(span.dataset.count) + 1;
       currentElement.dataset.disabled = true;
       break;
-    case false:
-      currentElement.dataset.disabled = false;
-      break;
+
     default:
       return null;
   }
