@@ -94,7 +94,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const replySubmit = document.getElementById("reply-submit");
 
-  replySubmit.addEventListener("click", () => {
+  replySubmit?.addEventListener("click", () => {
     const replyInput = document.getElementById("reply-input");
 
     if (replyInput.value) {
