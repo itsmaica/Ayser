@@ -1,6 +1,6 @@
 #reply-container {
-    position: absolute;
-    top: 100px;
+    position: fixed;
+    top: 175px;
     right: 10rem;
 
     max-height: 100%;
