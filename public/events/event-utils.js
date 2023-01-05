@@ -66,6 +66,12 @@ export const handleQuestionSlide = (currentElement) => {
 
   const isHidden = currentElement.classList.contains("hidden");
 
+  const currentQuestionId = localStorage.getItem("currentQuestionId");
+  const currentQuestion = document.querySelector(
+    `section[data-question-id="${currentQuestionId}"]`
+  );
+
+  console.log("current question ", currentQuestion);
   switch (isHidden) {
     case true:
       questionListContainer.classList.remove("translate");
@@ -102,7 +108,7 @@ export const handleRoomEvents = (e) => {
   const currentElement = e.target;
 
   switch (currentElement.id) {
-    case "reply-button" || "reply-container":
+    case "reply-button":
       handleReplySlide(currentElement);
       break;
     case "highlight-icon":
