@@ -14,6 +14,7 @@ export const questionListContainer = async () => {
 
   const questions = collection(db, "questions");
   const allQuestions = await getDocs(questions);
+
   allQuestions.forEach((doc) => {
     const content = createQuestion(doc);
     container.append(content);

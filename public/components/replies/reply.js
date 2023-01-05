@@ -1,12 +1,3 @@
-import {
-  collection,
-  query,
-  where,
-  getDocs,
-} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
-import { db } from "../../firebase.js";
-import { getQuestionReplies } from "../../api/index.js";
-
 export const replyContainer = async () => {
   const questionId = localStorage.getItem("currentQuestionId");
 
@@ -22,19 +13,12 @@ export const replyContainer = async () => {
   replyHeading.setAttribute("id", "reply-container-heading");
   replyHeading.innerText = "Question Replies";
 
-  container.append(replyHeading, replyInputs());
-
-  // const replies = ["Yes you can use flex", "Yup parent container not children"];
-
-  const repliesDoc = await getQuestionReplies(questionId);
-  // make request to get all replies by question Id here
-
-  console.log("replies doc ", repliesDoc);
+  container.append(replyHeading, createReplyInputs());
 
   roomContainer.appendChild(container);
 };
 
-const replyInputs = () => {
+const createReplyInputs = () => {
   const replyLabel = document.createElement("label");
   const replyInput = document.createElement("input");
 
@@ -57,12 +41,9 @@ const replyInputs = () => {
   return replyInputContainer;
 };
 
-export const createReply = (content, questionId) => {
+export const createReplyCard = (content, questionId) => {
   const container = document.createElement("div");
   const reply = document.createElement("h3");
-
-  // create a reply by making a post to specific question reply route
-  // if true create reply below
 
   container.setAttribute("id", "reply-card");
   container.setAttribute("type", "submit");
