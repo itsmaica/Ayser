@@ -16,6 +16,7 @@ export const upvoteIcon = (questionId, upvote) => {
   const upvoteIcon = document.createElement("i");
 
   const voteCount = document.createElement("span");
+  
   voteCount.setAttribute("id", "vote-count");
   voteCount.innerText = upvote;
   voteCount.dataset.count = upvote;
@@ -24,7 +25,8 @@ export const upvoteIcon = (questionId, upvote) => {
   upvoteContainer.setAttribute("id", "upvote-container");
 
   upvoteIcon.setAttribute("id", "upvote-icon");
-  upvoteIcon.setAttribute("class", "fa-regular fa-hand-point-up");
+  upvoteIcon.setAttribute("class", "fa-solid fa-hand-point-up");
+  upvoteIcon.dataset.disabled = false;
   upvoteIcon.dataset.questionId = questionId;
 
   upvoteContainer.append(upvoteIcon, voteCount);
