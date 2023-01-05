@@ -1,8 +1,7 @@
 export const replyContainer = async () => {
   const questionId = localStorage.getItem("currentQuestionId");
 
-  console.log("reply container question id", questionId);
-  const roomContainer = document.getElementById("room-container");
+  // const roomContainer = document.getElementById("room-container");
 
   const container = document.createElement("section");
   const replyHeading = document.createElement("h2");
@@ -15,7 +14,7 @@ export const replyContainer = async () => {
 
   container.append(replyHeading, createReplyInputs());
 
-  roomContainer.appendChild(container);
+  document.body.appendChild(container);
 };
 
 const createReplyInputs = () => {

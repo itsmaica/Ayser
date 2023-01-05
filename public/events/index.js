@@ -25,8 +25,10 @@ export const handleRoomSlideEffect = () => {
   const roomContainer = document.getElementById("room-container");
 
   roomContainer.addEventListener("click", (e) => {
+    e.stopPropagation();
     const closeRoomEffect = handleRoomEvents(e);
     handleRoomTransition(closeRoomEffect);
+
     // TODO: fetch room questions (need to optimize this feature, its query heavy)
   });
 };
@@ -45,6 +47,7 @@ export const handleCreateReply = () => {
       replyInput.value = "";
 
       // post to question reply with new reply input value
+      // handleRoomTransition(null);
     }
   });
 };

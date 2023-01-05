@@ -26,7 +26,6 @@ export const postQuestion = async ({ name, question }) => {
   const _question = doc(db, "questions", questions.id);
   const questionDoc = await getDoc(_question);
 
-  console.log("question doc ", questionDoc);
   return questionDoc;
 };
 

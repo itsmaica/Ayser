@@ -28,10 +28,12 @@ export const createQuestion = (doc) => {
   const container = document.createElement("section");
 
   container.setAttribute("class", "questions");
+  container.setAttribute("id", "question-card");
   container.dataset.questionId = doc.id;
 
   const questionContent = document.createElement("h2");
   questionContent.setAttribute("class", "question-content");
+  questionContent.setAttribute("id", "question-card-header");
   questionContent.dataset.questionId = doc.id;
 
   questionContent.innerText = question;
@@ -43,13 +45,13 @@ export const createQuestion = (doc) => {
   );
 
   container.append(questionContent, questionActions);
-
   return container;
 };
 
 export const createQuestionActions = (questionId, highlighted, upvote) => {
   const actionContainer = document.createElement("div");
   actionContainer.setAttribute("id", "reply-actions-container");
+  actionContainer.dataset.questionId = questionId;
 
   const replyButton = document.createElement("button");
   replyButton.setAttribute("id", "reply-button");
