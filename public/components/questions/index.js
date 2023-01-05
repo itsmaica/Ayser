@@ -12,7 +12,6 @@ export const questionListContainer = async () => {
   container.setAttribute("id", "question-list-container");
   container.setAttribute("class", "question-containers");
 
-
   const questions = collection(db, "questions");
   const allQuestions = await getDocs(questions);
   allQuestions.forEach((doc) => {
@@ -23,23 +22,25 @@ export const questionListContainer = async () => {
   roomContainer.appendChild(container);
 };
 
-export const createQuestion = (
-  doc,
-  highlighted = false,
-  upvote = 0
-) => {
+export const createQuestion = (doc) => {
+  const { question, name, highlighted, upvote } = doc.data();
   const container = document.createElement("section");
+
   container.setAttribute("class", "questions");
 
-  const question = document.createElement("h2");
-  question.setAttribute("class", "question-content");
-  question.dataset.questionId = doc.id;
+  const questionContent = document.createElement("h2");
+  questionContent.setAttribute("class", "question-content");
+  questionContent.dataset.questionId = doc.id;
 
-  question.innerText = doc.data().question;
+  questionContent.innerText = question;
 
-  const questionActions = createQuestionActions(doc.id, highlighted, upvote);
+  const questionActions = createQuestionActions(
+    doc.id,
+    highlighted,
+    upvote ? upvote : 0
+  );
 
-  container.append(question, questionActions);
+  container.append(questionContent, questionActions);
 
   return container;
 };

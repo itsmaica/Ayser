@@ -8,8 +8,6 @@
 #menu-icon {
     font-size: 30px;
     position: relative;
-    top: 25%;
-    bottom: 25%;
     color: var(--custom-purple);
 }
 

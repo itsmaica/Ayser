@@ -1,6 +1,12 @@
 import { createQuestion } from "./components/questions/index.js";
 import { createReply } from "./components/replies/reply.js";
 import { loadComponents } from "./views/room-page.js";
+<<<<<<< HEAD
+import { replyContainer as repliesContainer } from "../components/replies/reply.js";
+
+// import { postQuestion } from "./components/question-card/index.js";
+=======
+>>>>>>> main
 import { app, db } from "./firebase.js";
 import { postQuestion } from "./api/index.js";
 
@@ -13,11 +19,15 @@ window.addEventListener("DOMContentLoaded", () => {
   questionButton.addEventListener("click", async () => {
     const name = document.getElementById("name-input").value;
     const question = document.getElementById("question-input").value;
-    console.log(name, question)
+
     const newQuestion = await postQuestion({ name, question });
-    console.log(newQuestion);
     // create a question card with newQuestion
-    createQuestion(newQuestion);
+
+    const questionsContainer = document.getElementById(
+      "question-list-container"
+    );
+
+    questionsContainer.append(createQuestion(newQuestion));
   });
 
   // icon events
@@ -53,6 +63,11 @@ window.addEventListener("DOMContentLoaded", () => {
       questionListContainer.classList.add("translate");
       questionContainer.classList.add("translate");
       roomContainer.classList.add("translate");
+
+      console.log("question id ", e.target.dataset.questionId);
+
+      localStorage.setItem("currentQuestionId", e.target.dataset.questionId);
+      repliesContainer();
     } else {
       replyContainer.classList.add("hidden");
 

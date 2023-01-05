@@ -5,10 +5,11 @@ export const banner = () => {
   bannerContainer.setAttribute("id", "banner-container");
 
   const bannerHeading = document.createElement("h1");
-  bannerHeading.setAttribute("id", "banner-heading");
+  bannerHeading.setAttribute("id", "banner-container-heading");
 
   bannerHeading.innerText = "AYSR";
-  bannerContainer.append(bannerHeading, menuContainer());
+  bannerContainer.appendChild(bannerHeading);
+  bannerContainer.appendChild(menuContainer());
 
   document.body.appendChild(bannerContainer);
 };

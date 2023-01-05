@@ -1,5 +1,12 @@
 import { db } from "../firebase.js";
-import { collection, addDoc, getDocs, doc, updateDoc, getDoc } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js"
+import {
+  collection,
+  addDoc,
+  getDocs,
+  doc,
+  updateDoc,
+  getDoc,
+} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 // requests
 // get all replies by question
 export const getQuestionReplies = async (questionId) => {
@@ -14,31 +21,32 @@ export const postQuestion = async ({ name, question }) => {
     name: name,
     question: question,
     highlighted: false,
-    upvote: 0
+    upvote: 0,
   });
   const _question = doc(db, "questions", questions.id);
   const questionDoc = await getDoc(_question);
-  return questionDoc
+
+  console.log("question doc ", questionDoc);
+  return questionDoc;
 };
 
 // mark question as highlighted
 export const highLightQuestion = async (questionId, highlighted) => {
   // TODO: query question db and mark as highlighted
   const data = {
-    highlighted: highlighted
-  }
+    highlighted: highlighted,
+  };
   const question = doc(db, "questions", questionId);
-  updateDoc(question, data)
+  updateDoc(question, data);
 };
 
 export const upvoteQuestion = async (questionId, voteCount) => {
   //TODO: increase upvote count
   const data = {
-    upvote: voteCount
-  }
+    upvote: voteCount,
+  };
   const question = doc(db, "questions", questionId);
-  updateDoc(question, data)
-
+  updateDoc(question, data);
 };
 
 // post reply to db
