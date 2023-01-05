@@ -55,6 +55,7 @@
 #reply-input-container {
     display: flex;
     gap: 10px;
+    margin-bottom: 20px;
 }
 
 #reply-label {

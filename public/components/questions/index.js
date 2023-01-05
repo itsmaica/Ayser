@@ -28,6 +28,7 @@ export const createQuestion = (doc) => {
   const container = document.createElement("section");
 
   container.setAttribute("class", "questions");
+  container.dataset.questionId = doc.id;
 
   const questionContent = document.createElement("h2");
   questionContent.setAttribute("class", "question-content");

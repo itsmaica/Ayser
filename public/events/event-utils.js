@@ -6,10 +6,12 @@ export const toggleHighlightIcon = (currentElement) => {
       currentElement.classList.remove("on");
       currentElement.classList.add("off");
       currentElement.dataset.highlighted = "false";
+      break;
     case false:
       currentElement.classList.remove("off");
       currentElement.classList.add("on");
       currentElement.dataset.highlighted = "true";
+      break;
     default:
       return null;
   }
@@ -68,6 +70,7 @@ export const handleQuestionSlide = (currentElement) => {
     case true:
       questionListContainer.classList.remove("translate");
       questionContainer.classList.remove("translate");
+
       break;
     case false:
       questionListContainer.classList.add("translate");
@@ -82,15 +85,14 @@ export const handleUpvoteCount = (currentElement) => {
   const dataAttribute = `span[data-question-id="${currentElement.dataset.questionId}"]`;
   const span = document.querySelector(`${dataAttribute}`);
 
-  const isDisabled = currentElement.dataset.disabled;
+  const isDisabled = JSON.parse(currentElement.dataset.disabled);
 
   switch (isDisabled) {
-    case true:
+    case false:
       span.innerText = "1";
       span.dataset.count = Number(span.dataset.count) + 1;
       currentElement.dataset.disabled = true;
       break;
-
     default:
       return null;
   }

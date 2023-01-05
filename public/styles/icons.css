@@ -28,9 +28,18 @@
 
 
 #upvote-icon {
-    color: var(--custom-purple);
+   -webkit-text-stroke-color: var(--custom-purple);
     font-size: 30px;
+    -webkit-text-stroke-width: 2.2px;
+    -webkit-text-fill-color: var(--custom-white);
 }
+
+#upvote-icon[data-disabled="true"]{
+    -webkit-text-fill-color: var(--custom-purple);
+    -webkit-text-stroke-width: 1px;
+
+}
+
 
 #reply-actions-container {
     height: 100px;
