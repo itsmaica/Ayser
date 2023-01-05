@@ -29,9 +29,7 @@ export const replyContainer = async () => {
   const repliesDoc = await getQuestionReplies(questionId);
   // make request to get all replies by question Id here
 
-  for (const reply of replies) {
-    container.append(createReply(reply, questionId));
-  }
+  console.log("replies doc ", repliesDoc.data());
 
   roomContainer.appendChild(container);
 };

@@ -86,11 +86,11 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
   // reply events
-  const replyContainer = document.getElementById("reply-container");
+  // const replyContainer = document.getElementById("reply-container");
 
-  replyContainer.addEventListener("click", (e) => {
-    e.stopPropagation();
-  });
+  // replyContainer.addEventListener("click", (e) => {
+  //   e.stopPropagation();
+  // });
 
   const replySubmit = document.getElementById("reply-submit");
 
