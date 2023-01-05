@@ -126,8 +126,15 @@ export const handleRoomEvents = (e) => {
     case "highlight-icon":
       toggleHighlightIcon(currentElement);
       break;
+    case "question-card":
+    case "question-content":
+    case "reply-actions-container":
+    case "vote-count":
+      handleReplySlide(currentElement);
+      break;
     case "upvote-icon":
       handleUpvoteCount(currentElement);
+      break;
     default:
       return null;
   }
