@@ -1,12 +1,9 @@
 import { createQuestion } from "./components/questions/index.js";
 import { createReply } from "./components/replies/reply.js";
 import { loadComponents } from "./views/room-page.js";
-<<<<<<< HEAD
+
 import { replyContainer as repliesContainer } from "../components/replies/reply.js";
 
-// import { postQuestion } from "./components/question-card/index.js";
-=======
->>>>>>> main
 import { app, db } from "./firebase.js";
 import { postQuestion } from "./api/index.js";
 
