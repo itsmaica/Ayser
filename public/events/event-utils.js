@@ -28,6 +28,13 @@ export const handleRoomTransition = (close) => {
       const questionContainer = document.getElementById("question-container");
       const replyContainer = document.getElementById("reply-container");
 
+      const currentQuestionId = localStorage.getItem("currentQuestionId");
+      const currentQuestion = document.querySelector(
+        `#question-list-container > section[data-question-id="${currentQuestionId}"]`
+      );
+
+      currentQuestion.classList.remove("selected");
+
       replyContainer.classList.add("hidden");
       questionListContainer.classList.remove("translate");
       questionContainer.classList.remove("translate");
@@ -47,11 +54,10 @@ export const handleReplySlide = (currentElement) => {
     case true:
       replyContainer.classList.remove("hidden");
       localStorage.setItem("currentQuestionId", questionId);
-      handleQuestionSlide(replyContainer);
+      handleQuestionSlide(currentElement);
       break;
     case false:
-      replyContainer.classList.add("hidden");
-      handleQuestionSlide(replyContainer);
+      handleQuestionSlide(currentElement);
       break;
     default:
       return null;
@@ -64,23 +70,29 @@ export const handleQuestionSlide = (currentElement) => {
   );
   const questionContainer = document.getElementById("question-container");
 
-  const isHidden = currentElement.classList.contains("hidden");
+  const isHidden = questionContainer.classList.contains("translate");
 
-  const currentQuestionId = localStorage.getItem("currentQuestionId");
+  const currentQuestionId = currentElement.dataset.questionId;
   const currentQuestion = document.querySelector(
-    `section[data-question-id="${currentQuestionId}"]`
+    `#question-list-container > section[data-question-id="${currentQuestionId}"]`
   );
 
-  console.log("current question ", currentQuestion);
+  const previousQuestionId = localStorage.getItem("currentQuestionId");
+  const previousQuestion = document.querySelector(
+    `#question-list-container > section[data-question-id="${previousQuestionId}"]`
+  );
   switch (isHidden) {
-    case true:
-      questionListContainer.classList.remove("translate");
-      questionContainer.classList.remove("translate");
-
-      break;
     case false:
       questionListContainer.classList.add("translate");
       questionContainer.classList.add("translate");
+      previousQuestion.classList.remove("selected");
+      currentQuestion.classList.add("selected");
+      // localStorage.setItem("currentQuestionId", currentQuestionId);
+      break;
+    case true:
+      previousQuestion.classList.remove("selected");
+      currentQuestion.classList.add("selected");
+      localStorage.setItem("currentQuestionId", currentQuestionId);
       break;
     default:
       return null;
