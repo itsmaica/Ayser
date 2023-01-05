@@ -1,8 +1,16 @@
-import { collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js"
+import {
+  collection,
+  query,
+  where,
+  getDocs,
+} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 import { db } from "../../firebase.js";
+import { getQuestionReplies } from "../../api/index.js";
 
+export const replyContainer = async () => {
+  const questionId = localStorage.getItem("currentQuestionId");
 
-export const replyContainer = () => {
+  console.log("reply container question id", questionId);
   const roomContainer = document.getElementById("room-container");
 
   const container = document.createElement("section");
@@ -16,12 +24,13 @@ export const replyContainer = () => {
 
   container.append(replyHeading, replyInputs());
 
-  const replies = ["Yes you can use flex", "Yup parent container not children"];
+  // const replies = ["Yes you can use flex", "Yup parent container not children"];
 
+  const repliesDoc = await getQuestionReplies(questionId);
   // make request to get all replies by question Id here
 
   for (const reply of replies) {
-    container.append(createReply(reply, 1));
+    container.append(createReply(reply, questionId));
   }
 
   roomContainer.appendChild(container);
