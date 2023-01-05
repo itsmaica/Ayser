@@ -5,7 +5,6 @@ import {
   getDocs,
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 import { db } from "../../firebase.js";
-import { getQuestionReplies } from "../../api/index.js";
 
 export const replyContainer = async () => {
   const questionId = localStorage.getItem("currentQuestionId");
