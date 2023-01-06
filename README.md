@@ -5,7 +5,7 @@ Aysr is a teaching tool that provides a service to students which allows them to
 ## Index
 [MVP Feature List](https://github.com/itsmaica/Ayser/wiki/MVP-Feature-List) |
 [Database Schema](https://github.com/itsmaica/Ayser/wiki/DB-Schema) |
-[User Stories](https://github.com/itsmaica/Ayser/wiki/Ayser-User-Stories) |
+[User Stories](https://github.com/itsmaica/Ayser/wiki/MVP-Feature-List) |
 [Wireframes](https://github.com/itsmaica/Ayser/wiki/Ayser-Wireframes) |
 
 ## Technologies Used
