@@ -1,8 +1,4 @@
 export const replyContainer = async () => {
-  const questionId = localStorage.getItem("currentQuestionId");
-
-  // const roomContainer = document.getElementById("room-container");
-
   const container = document.createElement("section");
   const replyHeading = document.createElement("h2");
 
