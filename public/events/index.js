@@ -14,9 +14,10 @@ export const handleLogin = () => {
 
 export const handleLogout = () => {
   const logoutButton = document.getElementById("logout-button");
-
+  
   logoutButton &&
-    logoutButton.addEventListener("click", () => {
+  logoutButton.addEventListener("click", (e) => {
+      e.stopPropagation()
       localStorage.removeItem("roomId");
       window.location.reload();
     });
