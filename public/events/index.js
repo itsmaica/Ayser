@@ -25,18 +25,18 @@ export const handleLogout = () => {
 export const handleMenu = () => {
   const menuButton = document.getElementById("menu-icon");
 
-  menuButton.addEventListener('click', () => {
-    const options = document.getElementById('menu-options')
-    const logoutButton = document.getElementById('logout-button')
+  menuButton.addEventListener("click", () => {
+    const options = document.getElementById("menu-options");
+    const logoutButton = document.getElementById("logout-button");
 
-    if(options.classList.contains('menu-hidden')){
-      options.classList.remove('menu-hidden')
-      logoutButton.classList.remove('logout-hidden')
+    if (options.classList.contains("menu-hidden")) {
+      options.classList.remove("menu-hidden");
+      logoutButton.classList.remove("logout-hidden");
     } else {
-      options.classList.add('menu-hidden')
-      logoutButton.classList.add('menu-hidden')
+      options.classList.add("menu-hidden");
+      logoutButton.classList.add("logout-hidden");
     }
-  })
+  });
 };
 
 export const handleCreateQuestion = () => {
