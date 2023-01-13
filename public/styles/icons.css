@@ -25,7 +25,7 @@
     box-shadow: var(--custom-card-shadow);
     border-radius: 5px;
     cursor: default;
-
+    z-index: 1;
     transition: height 1s ease, box-shadow 1s ease;
 }
 
@@ -51,6 +51,7 @@
     height: fit-content;
     top: 55%;
     transition: visibility ease 0.7s .35s;
+    z-index: 3;
 }
 
 #logout-button.logout-hidden {
