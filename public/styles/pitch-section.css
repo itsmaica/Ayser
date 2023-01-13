@@ -17,7 +17,7 @@
 }
 
 #ask-your-question {
-    padding-left: 4rem;
+    margin-left: 4rem;
     padding-right: 4rem;
     height: 50%;
     width: 100%;
@@ -28,7 +28,7 @@
 }
 
 #get-your-answer {
-    padding-left: 4rem;
+    margin-left: 4rem;
     padding-right: 4rem;
     height: 50%;
     width: 100%;
@@ -41,14 +41,14 @@
 #ask-your-question p {
     font-family: 'Playfair Display', serif;
     font-size: 3.5em;
-    padding-left: 3rem;
+    margin-left: 3rem;
     /* color: var(--custom-highlight); */
     /* color: white; */
     color: black;
 }
 
 #get-your-answer p {
-    padding-left: 4rem;
+    margin-left: 4rem;
     padding-right: 4rem;
     font-family: 'Playfair Display', serif;
     font-size: 3em;
